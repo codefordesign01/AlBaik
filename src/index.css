@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply bg-cream font-sans text-ink-900 antialiased; }
+  h1, h2, h3, .font-display { letter-spacing: .02em; }
+  ::selection { @apply bg-brand-600 text-white; }
+}
+
+@layer components {
+  .container-x { @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8; }
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 font-semibold transition duration-200 active:scale-95 disabled:cursor-not-allowed disabled:opacity-50; }
+  .btn-primary { @apply btn bg-brand-600 text-white shadow-glow hover:bg-brand-700; }
+  .btn-sun { @apply btn bg-sun-500 text-ink-900 hover:bg-sun-400 shadow-lg shadow-sun-500/30; }
+  .btn-ghost { @apply btn border-2 border-white/70 text-white hover:bg-white hover:text-ink-900; }
+  .btn-outline { @apply btn border-2 border-brand-600 text-brand-600 hover:bg-brand-600 hover:text-white; }
+  .input { @apply w-full rounded-xl border border-ink-900/15 bg-white px-4 py-3 text-sm outline-none transition focus:border-brand-600 focus:ring-4 focus:ring-brand-600/15; }
+  .label { @apply mb-1.5 block text-sm font-semibold text-ink-800; }
+  .card { @apply rounded-3xl bg-white shadow-card; }
+}
+
+.dots-bg {
+  background-image: radial-gradient(rgba(255,255,255,.12) 1.5px, transparent 1.5px);
+  background-size: 22px 22px;
+}
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
